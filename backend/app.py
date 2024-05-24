@@ -24,7 +24,7 @@ def trade():
     latest_signal = signals["positions"].iloc[-1]
     
     if latest_signal == 1.0:
-        order = place_order(symbol, 10)  # example order
+        order = place_order(symbol, 10) # can change this l8r
         save_trade_history(symbol, 10, "buy")
         return jsonify({"message": "Order placed", "order": order})
     else:
