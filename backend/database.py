@@ -26,3 +26,4 @@ class TradeHistory(Base):
     quantity = Column(Integer)
     order_type = Column(String)
     timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    
