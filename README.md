@@ -1,4 +1,4 @@
 # Algo-Trading-Bot
-to do:
-- fix html site
-- access db to see if res is correct
+version 1
+
+version 2: https://github.com/hveerava/algo_trading_bot
