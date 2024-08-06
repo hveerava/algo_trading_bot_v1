@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Trading Dashboard</h1>
+    <div>
+        <h2>Stock Data</h2>
+        <input type="text" id="stockSymbol" placeholder="Enter stock symbol">
+        <button onclick="fetchStockData()">Get Stock Data</button>
+        <pre id="stockData"></pre>
+    </div>
+    <div>
+        <h2>Forex Data</h2>
+        <input type="text" id="forexPair" placeholder="Enter forex pair (e.g., EURUSD)">
+        <button onclick="fetchForexData()">Get Forex Data</button>
+        <pre id="forexData"></pre>
+    </div>
+
+    <script>
+        function fetchStockData() {
+            const symbol = document.getElementById('stockSymbol').value;
+            $.getJSON(`/api/stock/${symbol}`, function(data) {
+                document.getElementById('stockData').textContent = JSON.stringify(data, null, 2);
+            });
+        }
+
+        function fetchForexData() {
+            const pair = document.getElementById('forexPair').value;
+            $.getJSON(`/api/forex/${pair}`, function(data) {
+                document.getElementById('forexData').textContent = JSON.stringify(data, null, 2);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+stock_data_url: 'https://any-url/stocks'
+forex_data_url: 'https://any-url/forex'
+database_path: 'trading_bot.db'
+cache_path: 'cache.json'
+log_file: 'trading.log'
+max_drawdown: 0.1
+max_position_size: 10000

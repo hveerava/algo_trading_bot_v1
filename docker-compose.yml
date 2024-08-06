@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  trading-bot:
+    build: .
+    container_name: trading_bot
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    command: python main.py
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: trading_bot_frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
